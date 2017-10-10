@@ -1,0 +1,46 @@
+<mvc:View controllerName="com.sapreporteclientes.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m">
+	<App>
+		<pages>
+			<Page showHeader="false" title="{i18n>title}">
+				<content>
+					<Table inset="false" items="{ path: '/Cliente', sorter: { path: 'Apellidos' } }">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="Clientes" level="H2"/>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column hAlign="Center" width="12em">
+								<Text text="Cliente"/>
+							</Column>
+							<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Fecha Nac."/>
+							</Column>
+							<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Direccion"/>
+							</Column>
+							<Column hAlign="Center" minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Correo / Celular"/>
+							</Column>
+							<Column hAlign="Center">
+								<Text text="Empresa"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<ObjectIdentifier title="{TipoDocumento} {NroDocumento}" text="{Apellidos}, {Nombre}"/>
+									<Text text="{FechaNacimiento}"/>
+									<Text text="{Direccion}"/>
+									<Text text="{Correo} / {Celular}"/>
+									<Text text="{Empresa}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
